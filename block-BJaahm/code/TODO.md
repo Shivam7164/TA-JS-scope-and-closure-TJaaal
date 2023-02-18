@@ -19,6 +19,14 @@ console.log(
 
 2. Construct a function union that compares input arrays and returns a new array that contains all elements. If there are duplicate elements, only add it once to the new array. Preserve the order of the elements starting from the first element of the first input array. You can only use reduce method to do this.
 
+function intersection(...arrays){
+    let arr = arrays[0]
+arrays.reduce((acc,cv)=>{
+    arr = arr.filter(ele => cv.includes(ele)).concat(cv)
+})
+    return arr;
+}
+
 // Test
 console.log(
   union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5])
